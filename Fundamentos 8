@@ -1,0 +1,86 @@
+Ejercicio 1: Sacar con miedo
+Pegá el código anterior en el editor y observá el resultado.
+
+Resolución: procedure SacarAzulConMiedo() {
+  Sacar(Azul)
+}
+
+Ejercicio 2: Sacar con miedo, segundo intento
+Pegá el código anterior en el editor y observá el resultado.
+
+Resolución: procedure SacarAzulConMiedo() {
+  if (hayBolitas(Azul)) {
+    Sacar(Azul)
+  } 
+}
+
+Ejercicio 3: Eliminando la bolita roja
+Modificá el procedimiento que te dimos para que saque una bolita roja, sólo si hay alguna.
+
+Resolución: procedure SacarRojoConMiedo() {
+  if (hayBolitas(Rojo)) {
+    Sacar(Rojo)
+  } 
+}
+
+Ejercicio 4: Un ejemplo medio rebuscado
+Defini un procedimiento CompletarCelda() que, si ya hay alguna bolita negra, complete la celda poniendo una roja, una azul y una verde.
+
+Resolución: procedure CompletarCelda(){
+  if (hayBolitas(Negro)){
+    Poner(Rojo)
+    Poner(Azul)
+    Poner(Verde)
+  }
+}
+
+Ejercicio 5: ¿Y sólo sirve para ver si hay bolitas?
+Creá un programa que se mueva al Este sólo si es posible. Recordá utilizar puedeMover(direccion).
+
+Resolución: program {
+  if(puedeMover(Este)){
+  Mover(Este)
+}
+}
+
+Ejercicio 6: Un poquito de matemática
+Intentá crear un programa que ponga 1 bolita negra sólo si hay menos de 5 bolitas negras.
+
+Resolución: program{
+  if(nroBolitas(Negro)<5){
+    Poner(Negro)
+}
+}
+
+Ejercicio 7: Cómo decirle que no...
+Definí un procedimiento AsegurarUnaBolitaVerde() que se asegure que en la celda actual hay al menos una bolita verde. Esto es: si ya hay bolitas verdes no hay que hacer nada, pero si no hay tendría que poner una.
+
+Resolución: procedure AsegurarUnaBolitaVerde(){
+  if(not hayBolitas(Verde)){
+    Poner(Verde)
+}
+}
+
+Ejercicio 8: Dos caminos distintos
+Escribí este código en el editor y fijate cómo resuelve el problema.
+
+Resolución: procedure MoverComoSea() {
+    if (puedeMover(Oeste)) {
+        Mover(Oeste)
+    } else {
+        Mover(Norte)
+    }
+}
+
+Ejercicio 9: Un tablero de luces
+Definí un procedimiento PrenderOApagarLuz() que se encargue de prender las luces que estén apagadas o apagar las luces encendidas, según corresponda. Tené en cuenta que en cada celda solo puede haber bolitas de color verde o negro.
+
+Resolución: procedure PrenderOApagarLuz(){
+   if (hayBolitas(Verde)) {
+     Sacar(Verde)
+     Poner(Negro)} 
+   else {
+     Sacar(Negro)
+     Poner(Verde)
+    }
+}
