@@ -1,0 +1,135 @@
+Ejercicio 1: MoverOeste10
+Entremos en calor: definí un procedimiento MoverOeste10 que mueva el cabezal 10 veces hacia el Oeste.
+
+Resolución: procedure MoverOeste10(){
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Oeste)
+}
+
+Ejercicio 2: La computadora repite por nosotros
+¡escribí este código en el editor y fijate si funciona!
+
+Resolución: procedure MoverOeste10() {
+  repeat(10) {
+    Mover(Oeste)
+  }
+}
+
+Ejercicio 3: MoverOeste5 usando repeat
+Definí un procedimiento MoverOeste5 que se mueva 5 veces al Oeste.
+
+Resolución: procedure MoverOeste5() {
+  repeat(5) {
+    Mover(Oeste)
+  }
+}
+
+Ejercicio 4: No todo es repetir
+Definí el procedimiento Poner3AlNoreste()
+
+Resolución: procedure Poner3AlNoreste(){
+  Mover(Norte)
+  Mover(Este)
+  repeat(3) {
+    Poner(Negro)
+  }
+}
+
+Ejercicio 5: También vale después
+Definí el procedimiento PonerAzulLejos, que coloque una bolita Azul 4 celdas hacia el Este
+
+Resolución: procedure PonerAzulLejos(){
+  repeat(4) {
+    Mover(Este)
+  }
+  Poner(Azul)
+}
+
+Ejercicio 6: Repitiendo varios comandos
+Definí una versión superadora de DibujarLineaNegra6, esta vez usando repeat.
+
+Resolución: procedure DibujarLineaNegra6() {
+  repeat(6){
+    Poner(Negro)
+    Mover(Este)
+}
+}
+
+Ejercicio 7: ¿Dónde está el error?
+Esta solución para LineaRoja4 no resuelve el problema como esperábamos,¿Nos ayudás a corregirla?
+
+Resolución: procedure LineaRoja4() {
+  repeat(4) {
+    Poner(Rojo)
+    Mover(Norte)
+  }
+}
+
+Ejercicio 8: Diagonal con una bolita
+Definí un procedimiento Diagonal4Azul que dibuje una diagonal de longitud 4 hacia el Noreste, donde cada celda tenga una bolita azul. El cabezal debe quedar donde muestra la imagen.
+
+Resolución: procedure Diagonal4Azul(){
+  Poner(Azul)
+  repeat(3){
+    Mover(Norte)
+    Mover(Este)
+    Poner(Azul)    
+  }
+   Mover(Norte)
+   Mover(Este)
+}
+
+Ejercicio 9: Diagonal "pesada"
+Definí un procedimiento DiagonalPesada4Azul que resuelva el problema.
+
+Resolución: procedure MoverNE(){
+  repeat(21){ 
+   Poner(Azul)
+}  
+  Mover(Norte)
+  Mover(Este)
+}
+
+procedure DiagonalPesada4Azul(){
+  repeat(4){
+    MoverNE()
+}
+}
+
+Ejercicio 10: El caso borde
+Teniendo en cuenta esto último, definí una nueva versión de LineaNegra4Este que deje el cabezal en la última celda de la línea.
+
+Resolución: procedure LineaNegra4Este() {
+  repeat(3) {
+    Poner(Negro)
+    Mover(Este)
+  }
+    Poner(Negro) 
+ }
+
+Ejercicio 11: De lado a lado, dibujamos un cuadrado
+Definí el procedimiento CuadradoNegro4 para dibujar un cuadrado de 4x4 con bolitas negras. Al empezar, el cabezal se encuentra en la esquina inferior izquierda del cuadrado (no necesariamente del tablero ) y cuando termine el programa el cabezal deberá quedar en el extremo superior derecho del cuadrado. No te olvides de invocar LineaNegra4Este.
+Tené en cuenta lo que hablamos en el ejercicio anterior sobre el caso borde. 
+
+Resolución: procedure VolverAlInicio(){
+  repeat(3){
+    Mover(Oeste)
+  }
+}
+
+procedure CuadradoNegro4(){
+  repeat(3){
+    LineaNegra4Este()
+    VolverAlInicio()
+    Mover(Norte)
+  }   
+  LineaNegra4Este()
+}
