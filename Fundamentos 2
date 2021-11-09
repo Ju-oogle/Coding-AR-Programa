@@ -1,0 +1,137 @@
+Ejercicio 1: Calentando motores
+Probá escribir y ejecutar este programa. Te mostraremos el resultado al ejecutarlo en un tablero de 2x2, y en otro de 3x2, ambos con el cabezal inicialmente en el origen.
+
+Resolución: program {
+  Poner(Rojo)
+  Mover(Este)
+  Poner(Negro)
+}
+
+Ejercicio 2: Combinando comandos
+Creá un programa que ponga dos bolitas en la posición inicial, y otras dos en la celda de al lado hacia el Este. Todas las bolitas deben ser rojas.
+
+Resolución: program {
+  Poner(Rojo)
+  Poner(Rojo)
+  Mover(Este)
+  Poner(Rojo)
+  Poner(Rojo)
+}
+
+Ejercicio 3: La fila roja
+Creá un programa que a partir de un tablero vacío con el cabezal en el origen, dibuje una linea de cuatro celdas hacia el Este. Las bolitas deben ser rojas y debe poner una bolita por celda.
+
+Resolución: program{
+  Poner(Rojo)
+  Mover(Este)
+  Poner(Rojo)
+  Mover(Este)
+  Poner(Rojo)
+  Mover(Este)
+  Poner(Rojo)
+}
+
+Ejercicio 4: Una escalerita
+Usando las herramientas que ya conocés, creá un programa que dibuje una escalera azul como la que se ve en la imagen. El cabezal empieza en el origen (o sea, en el borde Sur-Oeste) y debe quedar en el extremo inferior derecho de la escalera.
+
+Resolución: program{
+  Poner(Azul)
+  Mover(Norte)
+  Poner(Azul)
+  Mover(Norte)
+  Poner(Azul)
+  Mover(Este)
+  Mover(Sur)
+  Poner(Azul)
+  Mover(Sur)
+  Poner(Azul)
+  Mover(Este)
+  Poner(Azul)
+}
+
+Ejercicio 5: Portugal
+Creá un programa que dibuje una bandera portuguesa.
+
+Resolución: program{
+  Poner(Verde)
+  Mover(Norte)
+  Poner(Verde)
+  Mover(Este)
+  Poner(Rojo)
+  Mover(Sur)
+  Poner(Rojo)
+  Mover(Este)
+  Poner(Rojo)
+  Mover(Norte)
+  Poner(Rojo)
+}
+
+Ejercicio 6: Y ahora una de más cerquita
+Con el cabezal en el origen, tu tarea es dibujar esta pseudo-bandera argentina:
+
+Resolución: program{
+  Poner(Azul)
+  Mover(Este)
+  Poner(Azul)
+  Mover(Este)
+  Poner(Azul)
+  Mover(Este)
+  Poner(Azul)
+  Mover(Este)
+  Poner(Azul)
+  Mover(Norte)
+  Mover(Oeste)
+  Mover(Oeste)
+  Poner(Rojo)
+  Mover(Oeste)
+  Mover(Oeste)
+  Mover(Norte)
+  Poner(Azul)
+  Mover(Este)
+  Poner(Azul)
+  Mover(Este)
+  Poner(Azul)
+  Mover(Este)
+  Poner(Azul)
+  Mover(Este)
+  Poner(Azul)
+}
+
+Ejercicio 7: Limpiando el jardín
+Con el cabezal en el origen, creá un programa que se encargue de "podar" el tablero de la imagen: sacar todas las bolitas verdes. Al finalizar, el cabezal debe terminar donde empezó.
+
+Resolución: program{
+  Sacar(Verde)
+  Mover(Norte)
+  Sacar(Verde)
+  Mover(Norte)
+  Sacar(Verde)
+  Mover(Este)
+  Sacar(Verde)
+  Mover(Este)
+  Sacar(Verde)
+  Mover(Sur)
+  Sacar(Verde)
+  Mover(Sur)
+  Sacar(Verde)
+  Mover(Oeste)
+  Sacar(Verde)
+  Mover(Oeste)
+}
+
+Ejercicio 8: Reemplazar bolitas
+Tu tarea es crear un programa que reemplace todas las bolitas rojas por verdes.
+
+Resolución:  program {
+  Sacar(Rojo)
+  Poner(Verde)
+  Mover(Este)
+  Sacar(Rojo)
+  Poner(Verde)
+  Mover(Norte)
+  Sacar(Rojo)
+  Poner(Verde)
+  Mover(Oeste)
+  Sacar(Rojo)
+  Poner(Verde) 
+}
