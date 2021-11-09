@@ -1,0 +1,209 @@
+Ejercicio 1: ¿De qué se trata?
+Tomate unos minutos (no más de 3) para tratar de descubrir qué es lo que hace el programa a continuación.
+
+Resolución: Dibuja un cuadrado de bolitas negras
+
+Ejercicio 2: Un programa un poco largo
+
+Resolución: presionar continuar
+
+Ejercicio 3: Las cosas por su nombre
+Enviá el código, así nos aseguramos de que hace exactamente lo mismo que el anterior.
+
+Resolución: procedure DibujarCuadradoNegroDeLado3() {
+  Poner(Negro)
+  Mover(Este)
+  Poner(Negro)
+  Mover(Este)
+  Poner(Negro)
+  Mover(Norte)
+  Poner(Negro)
+  Mover(Oeste)
+  Poner(Negro)
+  Mover(Oeste)
+  Poner(Negro)
+  Mover(Norte)
+  Poner(Negro)
+  Mover(Este)
+  Poner(Negro)
+  Mover(Este)
+  Poner(Negro)    
+}
+
+program {
+  DibujarCuadradoNegroDeLado3()   
+}
+
+Ejercicio 4: Enseñándole tareas a la computadora
+Copiá y enviá el código para ver qué pasa.
+
+Resolución: procedure Poner3Rojas() {
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+}
+
+Ejercicio 5: Procedimientos en acción
+Completá el código para que además de definir el procedimiento PonerNegroYRojo luego lo invoque en el program.
+
+Resolución: procedure PonerNegroYRojo() {
+	Poner(Negro)
+	Poner(Rojo)
+}
+program{
+  PonerNegroYRojo()
+}
+
+Ejercicio 6: Escribiendo procedimientos
+Definí un procedimiento Poner3Verdes que ponga 3 bolitas verdes en la celda actual e invocalo en el program.
+
+Resolución: procedure Poner3Verdes(){
+  Poner(Verde)
+  Poner(Verde)
+  Poner(Verde)
+}
+program{
+  Poner3Verdes()
+}
+
+Ejercicio 7: Procedimiento, ¡te invoco!
+Creá un programa que lo haga invocando el procedimiento Poner3Verdes. Recordá que ya te lo damos definido ¡no tenés que volver a escribirlo!
+
+Resolución: program{
+  Poner3Verdes()
+  Mover(Este)
+  Poner3Verdes()
+}
+
+Ejercicio 8: Una definición, "infinitos" usos
+Creá un programa que ponga 9 bolitas rojas en la celda actual invocando el procedimiento Poner3Rojas todas las veces que sea necesario.
+
+Resolución: program{
+  Poner3Rojas()
+  Poner3Rojas()
+  Poner3Rojas()
+}
+
+Ejercicio 9: Procedimientos dentro de otros
+Definí el procedimiento Poner9Rojas que, utilizando Poner3Rojas, ponga nueve bolitas rojas en una celda. Una vez definido, invocá el nuevo procedimiento en un program.
+
+Resolución: procedure Poner9Rojas(){
+  Poner3Rojas()
+  Poner3Rojas()
+  Poner3Rojas()
+}
+
+program {
+  Poner9Rojas()
+}
+
+Ejercicio 10: Dibujamos con imaginación
+Definí el procedimiento DibujarPuntaNegra e invocalo dentro de un program. El cabezal comienza en el origen y debe terminar en el extremo inferior derecho de la punta.
+
+Resolución: procedure DibujarPuntaNegra(){
+  Poner(Negro)
+  Mover(Norte)
+  Poner(Negro)
+  Mover(Sur)
+  Mover(Este)
+  Poner(Negro)
+}
+
+program {
+  DibujarPuntaNegra()
+}
+
+Ejercicio 11: De punta a punta
+Definí el procedimiento DibujarDosPuntas e invocalo dentro un program. Acordate de utilizar DibujarPuntaNegra.
+
+Resolución: procedure DibujarDosPuntas(){
+  DibujarPuntaNegra()
+  Mover(Norte)
+  Mover(Este)
+  Mover(Norte)
+  DibujarPuntaNegra()
+}
+
+program{
+  DibujarDosPuntas()
+}
+
+Ejercicio 12: Rojo al borde
+Definí el procedimiento RojoAlBorde que ponga una bolita roja en la esquina superior izquierda del tablero e invocalo en el program.
+
+Resolución: procedure RojoAlBorde(){
+  IrAlBorde(Norte)
+  IrAlBorde(Oeste)
+  Poner(Rojo)
+}
+
+program{
+  RojoAlBorde()
+}
+
+Ejercicio 13: Adornando el tablero
+Definí dos procedimientos: el procedimiento PonerGuirnalda que coloque 3 bolitas rojas y 3 bolitas verdes en una celda y el procedimiento DecorarTablero que lo utilice y ponga una guirnalda en cada esquina superior. Invocá DecorarTablero en el program. Tené en cuenta que no sabemos la posición inicial donde se encontrará el cabezal.
+
+Resolución: procedure PonerGuirnalda(){
+  Poner3Verdes()
+  Poner3Rojas()
+}
+
+Ejercicio 14: Colores, colores, colores
+Definí un procedimiento DibujarLineaColorida que dibuje una línea multicolor de cuatro celdas hacia el Este y al finalizarla ubique el cabezal en la celda inicial. Tené en cuenta que siempre partimos del extremo Oeste. Invocá el nuevo procedimiento en un program.
+
+Resolución: procedure DecorarTablero(){
+  IrAlBorde(Norte)
+  IrAlBorde(Oeste)
+  PonerGuirnalda()
+  IrAlBorde(Este)
+  PonerGuirnalda()
+}
+
+program {
+  DecorarTablero()
+}
+
+Ejercicio 14: Colores, colores, colores
+Definí un procedimiento DibujarLineaColorida que dibuje una línea multicolor de cuatro celdas hacia el Este y al finalizarla ubique el cabezal en la celda inicial. Tené en cuenta que siempre partimos del extremo Oeste. Invocá el nuevo procedimiento en un program.
+
+Resolución: procedure CuadradoColorido(){
+  Poner(Azul)
+  Poner(Negro)
+  Poner(Rojo)
+  Poner(Verde)
+}
+procedure DibujarLineaColorida(){
+  CuadradoColorido()
+  Mover(Este)
+  CuadradoColorido()
+  Mover(Este)
+  CuadradoColorido()
+  Mover(Este)
+  CuadradoColorido()
+  IrAlBorde(Oeste)
+ 
+}
+
+program {
+  DibujarLineaColorida()
+}
+
+Ejercicio 15: Cuadrado de colores
+Definí un procedimiento DibujarCuadradoColorido que dibuje un cuadrado de 4×4 celdas en el que cada celda tenga una bolita de cada color e invocalo en el program. El cabezal debe quedar en la celda inicial.
+
+Resolución: procedure DibujarCuadradoColorido(){
+  DibujarLineaColorida()
+  Mover(Norte)
+  DibujarLineaColorida()
+  Mover(Norte)
+  DibujarLineaColorida()
+  Mover(Norte)
+  DibujarLineaColorida()
+  IrAlBorde(Sur)
+  }
+
+program{
+  DibujarCuadradoColorido()
+}
+
