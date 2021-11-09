@@ -1,0 +1,105 @@
+Ejercicio 1: ¡Hola, computadora!
+Resolución: presionar continuar
+
+Ejercicio 2: El Tablero
+Resolución: presionar continuar
+
+Ejercicio 3: El Cabezal
+Resolución: presionar continuar
+
+Ejercicio 4: Que comience el movimiento
+Escribí el código anterior en el editor y dale Enviar.
+
+Resolución: program {
+  Mover(Norte)
+}
+
+Ejercicio 5: Que siga el movimiento
+Creá un programa que en un tablero de 2x4 con el cabezal en el origen (la celda de abajo a la izquierda), mueva el cabezal tres veces hacia el norte:
+
+Resolución: program {
+  Mover(Norte)
+  Mover(Norte)
+  Mover(Norte)
+}
+
+Ejercicio 6: Para todos lados
+Creá un programa que mueva el cabezal dos posiciones hacia el Este y una hacia el Sur
+
+Resolución: program {
+  Mover(Sur)
+  Mover(Este)
+  Mover(Este)
+}
+
+Ejercicio 7: El orden de las cosas
+Veamos si entendiste esto: creá otro programa que haga lo mismo que el de arriba (mover hacia el noreste), pero de manera distinta.
+Ojo: tiene que funcionar en un tablero de 2x2.
+
+Resolución: program{
+  Mover(Este)
+  Mover(Norte)
+}
+
+Ejercicio 8: Sí, esto también se puede romper
+¿Y cómo es esa forma? Descubrilo vos: partiendo del tablero que te mostramos acá abajo, creá un programa que provoque que el cabezal se salga fuera de los límites.
+
+Resolución: program{
+  Mover(Sur)
+}
+
+Ejercicio 9: Nuestras primeras bolitas
+¡Probá este programa! Escribí el código en el editor, envialo y verás lo que pasa al ejecutarlo sobre este tablero:
+
+Resolución: program {
+  Poner(Rojo)    
+}
+
+Ejercicio 10: Más y más bolitas
+¡Escribí este programa en el editor y fijate cómo queda el tablero!
+
+Resolución: program {
+  Poner(Rojo)
+  Poner(Rojo)
+  Poner(Azul)
+  Poner(Verde)
+  Poner(Rojo)
+}
+
+Ejercicio 11: Poné tus primeras bolitas
+Ah, y ahora te toca a vos: creá un programa que ponga cuatro bolitas rojas y tres bolitas negras en la celda actual.
+
+Resolución: program {
+  Poner(Rojo)
+  Poner(Rojo)
+  Poner(Rojo)
+  Poner(Rojo)
+  Poner(Negro)
+  Poner(Negro)
+  Poner(Negro)
+}
+
+Ejercicio 12: Sacar Bolitas
+Sabiendo esto, creá un programa que elimine sólo la bolita roja de este tablero. ¡Tené cuidado! Prestá atención a la posición del cabezal
+
+Resolución: program{
+  Mover(Sur)
+  Sacar(Rojo)
+}
+
+Ejercicio 13: Cuando no hay bolitas
+¿Querés saber por qué? Intentá sacar una bolita verde o azul de este tablero y descubrilo.
+
+Resolución:  program{
+  Sacar(Verde)
+}
+
+Ejercicio 14: Limpiar celda
+Un último esfuercito: usando Sacar, creá un programa que elimine todas las bolitas de este tablero
+
+Resolución:  program{
+  Sacar(Negro)
+  Sacar(Verde)
+  Sacar(Azul)
+  Sacar(Rojo)
+}
