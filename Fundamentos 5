@@ -1,0 +1,152 @@
+1. Ejercicio 1: Pensando en subtareas
+Definí el procedimiento DibujarLineaNegra3 que, como su nombre lo indica, dibuje una línea poniendo 3 bolitas negras consecutivas hacia el Este y dejando el cabezal donde comenzó. Invocalo en un program.
+
+Resolución: procedure DibujarLineaNegra3(){
+  repeat(2){
+    Poner(Negro)
+    Mover(Este)
+   }
+  Poner(Negro)
+  VolverAtras()
+}
+
+program {
+  DibujarLineaNegra3()
+}
+
+
+Ejercicio 2: Dibujando un cuadrado con subtareas
+Definí el procedimiento DibujarCuadradoNegroDeLado3 que invocando DibujarLineaNegra3 dibuje un cuadrado negro sobre el tablero. Invocalo en un program.
+
+Resolución: procedure DibujarCuadradoNegroDeLado3() {
+  repeat(2){
+    DibujarLineaNegra3()
+    Mover(Norte)
+  }
+  DibujarLineaNegra3()
+}
+
+program {
+  DibujarCuadradoNegroDeLado3()
+}
+
+Ejercicio 4: Los que faltan
+Definí los procedimientos DibujarLineaRoja3 y DibujarLineaAzul3.
+
+Resolución: procedure DibujarLineaVerde3(){
+  repeat(2){
+    Poner(Verde)
+    Mover(Este)
+   }
+  Poner(Verde)
+  VolverAtras()
+}
+
+program {
+  DibujarLineaVerde3()
+}
+
+4. Ejercicio 4: Los que faltan  
+Definí los procedimientos DibujarLineaRoja3 y DibujarLineaAzul3.
+
+Resolución: procedure DibujarLineaRoja3(){
+  repeat(2){
+    Poner(Rojo)
+    Mover(Este)
+   }
+  Poner(Rojo)
+  VolverAtras()
+}
+
+procedure DibujarLineaAzul3(){
+  repeat(2){
+    Poner(Azul)
+    Mover(Este)
+   }
+  Poner(Azul)
+  VolverAtras()
+}
+
+Ejercicio 5: Procedimientos con agujeritos
+Escribí los códigos anteriores en el editor y fijate qué pasa. 
+
+Resolución: procedure Poner3(color) {
+  repeat(3) {
+    Poner(color)
+  }
+}
+
+program {
+  Poner3(Negro)
+  Poner3(Rojo)
+}
+
+Ejercicio 6: Llenando los espacios vacíos
+Creá un programa que ponga tres bolitas verdes. No te olvides de invocar el procedimiento Poner3.
+
+Resolución: program {
+  Poner3(Verde)
+}
+
+Ejercicio 7: DibujarLinea3
+Definí el procedimiento DibujarLinea3 que reciba un color y dibuje una línea de ese color.
+
+Resolución: procedure DibujarLinea3(color){
+  repeat(2) {
+    Poner(color)
+    Mover(Este)
+  }
+  Poner(color)
+  VolverAtras()
+}
+
+Ejercicio 8: DibujarCuadradoDeLado3
+Invocando DibujarLinea3, definí el procedimiento DibujarCuadradoDeLado3 que recibe un color y dibuja un cuadrado de 3x3 de ese color.
+
+Resolución: procedure DibujarCuadradoDeLado3(color) {
+  repeat(2){
+    DibujarLinea3(color)
+    Mover(Norte)
+  }
+  DibujarLinea3(color)
+}
+
+Ejercicio 9: Pasando varios parámetros
+Creá un program que invoque la nueva versión de DibujarLinea3 (no tenés que definirla, sólo invocarla) y dibuje un cuadrado multicolor
+
+Resolución: program {
+  DibujarLinea3(Verde,Este)
+  Mover(Este)
+  DibujarLinea3(Rojo,Norte)
+  Mover(Norte)
+  DibujarLinea3(Negro,Oeste)
+  Mover(Oeste)
+  DibujarLinea3(Azul,Sur)
+  Mover(Sur) 
+}
+
+Ejercicio 10: La ley, el orden y el BOOM
+Creá un programa cualquiera que invoque DibujarLinea3, pero esta vez intentá invocarlo con los argumentos invertidos
+
+Resolución: program {
+  DibujarLinea3(Este,Verde)
+}
+
+Ejercicio 11: Un argumento para dos parámetros
+Creá un programa que invoque a DibujarLinea3 pero pasándole sólo un argumento.
+
+Resolución: program {
+  DibujarLinea3(Verde)
+}
+
+Ejercicio 12: La tercera es la vencida
+Definí el procedimiento Triada.
+
+Resolución: procedure Triada(color1,color2,color3){
+  Poner(color1)
+  Mover(Este)
+  Poner(color2)
+  Mover(Este)
+  Poner(color3)
+}
+
