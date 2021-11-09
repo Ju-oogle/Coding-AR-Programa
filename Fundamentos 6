@@ -1,0 +1,137 @@
+Ejercicio 1: Entrando en calor... ¡Volviendo!
+Definí el procedimiento Diagonal4AzulVolviendo? usa la Diagonal4Azul pero tiene que dejar el cabezal en la posición inicial. 
+
+Resolución: procedure Diagonal4AzulVolviendo(){
+  Diagonal4Azul()
+  repeat(4){
+    Mover(Sur)
+    Mover(Oeste)
+}
+}
+
+Ejercicio 2: Una diagonal más ancha
+El procedimiento debe llamarse BandaDiagonal4. ¡Ojo! prestá atención a la posición final del cabezal.
+
+Resolución: procedure BandaDiagonal4(){
+repeat(3){
+Diagonal4AzulVolviendo()
+Mover(Norte)
+}
+repeat(3){
+Mover(Sur)
+}
+}
+
+
+Ejercicio 3: Pongamos... ¡Todo lo que queramos!
+Definí el procedimiento PonerN(cantidad, color).
+
+Resolución: procedure PonerN(cantidad, color){
+  repeat(cantidad){
+    Poner(color)
+  }
+}
+
+Ejercicio 4: Día de la Memoria
+El objetivo, entonces, es definir un procedimiento DiaDeLaMemoria():
+En la celda actual, poné 24 bolitas Azules, que representan el día.
+En la celda inmediatamente al Este, poné 3 bolitas Verdes, que representan el mes.
+En la celda a continuación, poné 1976 bolitas Negras, representando el año.
+
+Resolución: procedure DiaDeLaMemoria(){
+  PonerN(24,Azul)
+  Mover(Este)
+  PonerN(3,Verde)
+  Mover(Este)
+  PonerN(1976, Negro)
+}
+
+Ejercicio 5: Escribir cualquier fecha
+Definí el procedimiento Fecha(dia, mes, anio), que recibe los tres valores correspondientes, y escribe la fecha que representan, de esta manera:
+
+En la celda actual, tantas bolitas azules para representar el día.
+En la celda inmediatamente al Este, tantas bolitas Verdes para representar el mes.
+En la celda a continuación, tantas bolitas Negras para representar el año.
+
+Resolución: procedure Fecha(dia, mes, anio){
+  PonerN(dia,Azul)
+  Mover(Este)
+  PonerN(mes,Verde)
+  Mover(Este)
+  PonerN(anio,Negro)
+}
+
+Ejercicio 6: Movamos... ¡Todo lo que queramos!
+Definí un procedimiento MoverN(cantidad, direccion) que haga que el cabezal se desplace la cantidad especificada de veces en la dirección indicada.
+
+Resolución: procedure MoverN(cantidad, direccion){
+  repeat(cantidad){
+    Mover(direccion)
+  }
+}
+
+Ejercicio 7: Los números del reloj
+Definí un procedimiento DibujarReloj(radio) que ponga los números del reloj como se indica arriba: alrededor del casillero actual. El tamaño del reloj se indica con el radio que recibís como parámetro: mientras más grande es el radio, más alejados están los números del centro.
+
+Resolución: procedure FinalInicio(radio, direccion, cantidad, volver){
+  MoverN(radio, direccion)
+  PonerN(cantidad, Rojo)
+  MoverN(radio,volver)
+}
+
+procedure DibujarReloj(radio){
+  FinalInicio(radio, Este, 3, Oeste)
+  FinalInicio(radio, Oeste, 9, Este)
+  FinalInicio(radio, Norte, 12, Sur)
+  FinalInicio(radio, Sur, 6, Norte) 
+}
+
+Ejercicio 8: Una línea heavy
+Definí el procedimiento LineaEstePesada(peso, color, longitud). Tené en cuenta que el cabezal debe regresar a la posición inicial. Para eso vas a tener que invocar MoverN.
+
+Resolución: procedure LineaEstePesada(peso,color,longitud){
+  repeat(longitud){
+    PonerN(peso,color)
+    MoverN(1,Este)
+}
+    MoverN(longitud,Oeste)
+}
+
+Ejercicio 9: Guarda con la guarda
+Definí un procedimiento GuardaDe5(), que haga una "guarda" de 5 azulejos (como las que decoran las paredes). Cada azulejo está conformado por 1 bolita verde, 5 negras y 9 rojas.
+
+Resolución: procedure PonerAzulejo(){
+  PonerN(1,Verde)
+  PonerN(5,Negro)
+  PonerN(9,Rojo)
+}
+
+procedure GuardaDe5(){
+  PonerAzulejo()
+  repeat(4){
+    Mover(Este)
+    PonerAzulejo()
+  }
+}
+
+Ejercicio 10: Una guarda en L
+Definí un procedimiento GuardaEnL() que haga una guarda en L como muestra la figura, pero dejando el cabezal en la posición inicial.
+
+Resolución: procedure MoverIzquierda(){
+  repeat(2){
+  Mover(Este)
+  PonerAzulejo()
+}
+  IrAlBorde (Oeste)
+}
+
+procedure GuardaEnL() {
+  MoverIzquierda()
+  repeat(2){
+  PonerAzulejo()
+  MoverN(1,Norte)
+}
+  PonerAzulejo()
+  IrAlBorde(Sur)
+}
+
