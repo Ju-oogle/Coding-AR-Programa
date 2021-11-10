@@ -1,0 +1,102 @@
+Ejercicio 1: Y esto, ¿con qué se come?
+Tratá de entender qué hace este procedimiento
+
+Resolución: procedure MoverSegunBolitas() {
+  if (nroBolitas(Azul) + nroBolitas(Negro) + nroBolitas(Rojo) + nroBolitas(Verde) > 10) {
+    Mover(Este)
+  } else {
+    Mover(Norte)
+  }
+}
+
+Ejercicio 2: La importancia de nombrar las cosas
+Pegá el código anterior en el editor y observá el resultado.
+
+Resolución: function nroBolitasTotal() {
+  return (nroBolitas(Azul) + nroBolitas(Negro) + nroBolitas(Rojo) + nroBolitas(Verde))
+}
+
+Ejercicio 3: MoverSegunBolitas, versión 2
+Modificá la primera versión de MoverSegunBolitas para que use la función nroBolitasTotal() en vez de la expresión larga.
+
+Resolución: procedure MoverSegunBolitas() {
+  if (nroBolitasTotal() > 10) {
+    Mover(Este)
+  } else {
+    Mover(Norte)
+  }
+}
+
+Ejercicio 4: todasExcepto
+Definí la función todasExcepto para que retorne la cantidad de bolitas que no sean del color que se le pasa por parámetro.
+
+Resolución: function todasExcepto(color) {
+return (nroBolitasTotal() - nroBolitas(color) )
+}
+
+Ejercicio 5: Una función de otro tipo
+Definí la función rojoEsDominante() que nos diga si la cantidad de bolitas rojas es mayor que la suma de las bolitas de los otros colores. 
+
+Resolución: function rojoEsDominante(){ 
+  return (todasExcepto(Rojo) < nroBolitas(Rojo))
+}
+
+Ejercicio 6: En libertad
+Definí la función esLibreCostados() que indique si el cabezal puede moverse tanto al Este como al Oeste.
+
+Resolución: function esLibreCostados() {
+  return (puedeMover(Este) && puedeMover(Oeste))
+}
+
+Ejercicio 7: Cualquier bolita nos deja bien
+Definí la función hayAlgunaBolita() que responda a la pregunta ¿hay alguna bolita en la celda actual?
+
+Resolución: function hayAlgunaBolita(){
+  return (hayBolitas(Rojo) || hayBolitas(Azul) || hayBolitas(Negro) || hayBolitas(Verde))
+}
+
+Ejercicio 8: Siempre al borde...
+Definí la función estoyEnUnBorde() que determine si el cabezal está parado en algún borde.
+
+Resolución: function estoyEnUnBorde(){
+return (not puedeMover(Norte) || not puedeMover(Sur) || not puedeMover(Este) || not puedeMover(Oeste))
+}
+
+Ejercicio 9: Las compañeras ideales
+Definí la función hayBolitasAl(direccion, color) que informe si hay alguna bolita del color especificado en la celda vecina hacia la dirección dada.
+
+Resolución: function hayBolitasAl(direccion, color){
+  Mover(direccion)
+  return(hayBolitas(color))
+}
+
+Ejercicio 10: Lo ideal también se puede romper
+Hagamos la prueba: vamos a probar la función hayBolitasAl del ejercicio anterior con casos donde no pueda moverse el cabezal
+
+Resolución: function hayBolitasAl(direccion, color) {
+  Mover(direccion)
+  return (hayBolitas(color))
+}
+
+Ejercicio 11: ¿Hay bolitas lejos?
+Definí la función hayBolitasLejosAl(direccion, color, distancia).
+
+Resolución: Resolución: function hayBolitasLejosAl(direccion, color, distancia){
+  MoverN(distancia, direccion)
+  return(hayBolitas(color))
+}
+
+Ejercicio 12: Estoy rodeado de viejas bolitas
+Valiéndote de hayBolitasAl, definí la función estoyRodeadoDe(color) que indica si el cabezal está rodeado de bolitas de ese color.
+
+Resolución: function estoyRodeadoDe(color) {
+return (hayBolitasAl(Norte, color) && hayBolitasAl(Este, color) && hayBolitasAl(Sur, color) && hayBolitasAl(Oeste, color))
+}
+
+Ejercicio 13: Sin límites
+Usando estoyEnUnBorde y estoyRodeadoDe, definí hayLimite.
+
+Resolución: function hayLimite(){
+return(estoyEnUnBorde() || estoyRodeadoDe(Rojo))
+}
+
