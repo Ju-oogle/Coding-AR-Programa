@@ -1,0 +1,163 @@
+Ejercicio 1: Introducción a JavaScript
+Ver video
+
+Ejercicio 2: Funciones, definición
+definí ahora la función mitad, que tome un número por parámetro y retorne su mitad.
+
+Resolución: function mitad(numero) {
+   return numero / 2;
+}
+
+Ejercicio 3: Funciones, uso
+definí las siguientes funciones:
+anterior: toma un número y devuelve ese número menos uno
+triple: devuelve el triple de un número
+anteriorDelTriple, que combina las dos funciones anteriores: multiplica a un número por 3 y le resta 1
+
+Resolución: function anterior(numero) {
+  return numero - 1;
+}
+
+function triple(numero) {
+  return numero * 3;
+}
+
+function anteriorDelTriple(numero) {
+   return anterior(triple(numero));
+}
+
+Ejercicio 4: Probando funciones
+Probá en la consola las siguientes expresiones:
+
+Resolución: 4 + 5
+Math.round(4.5)
+funcionMisteriosa(1, 2, 3)
+
+Ejercicio 5: Haciendo cuentas
+Probá en la consola las siguientes expresiones:
+
+Math.round(4.4)
+Math.round(4.6)
+Math.max(4, 7)
+Math.min(4, 7)
+
+Ejercicio 6: Poniendo topes
+Declarar la funcion extraer devuelve el máximo entre la resta saldo - monto y 0
+
+Resolución: function extraer(saldo, monto) {
+return Math.max(saldo - monto, 0);
+}
+
+Ejercicio 7: Libros de la buena memoria
+Defini a alguien leGustaLeer, cuando la cantidad de libros que recuerda haber leído es mayor a 20. 
+
+Resolución: function leGustaLeer(cantLibros) {
+  return cantLibros >= 20 ;
+}
+
+Ejercicio 8: Booleanos
+definí las siguientes funciones:
+
+estaEntre, que tome tres números y diga si el primero es mayor al segundo y menor al tercero.
+estaFueraDeRango: que tome tres números y diga si el primero es menor al segundo o mayor al tercero
+
+Resolución: function estaEntre(n1,n2,n3){
+  return n1 > n2 && n1 < n3
+}
+
+function estaFueraDeRango(n1,n2,n3){
+  return n1 < n2 || n1 > n3
+}
+
+Ejercicio 9: Palabras, sólo palabras
+definí la función esFinDeSemana que tome un string que represente el nombre de un día de la semana, y nos diga si es "sábado" o "domingo".
+
+Resolución: function esFinDeSemana(dia){
+  return dia === 'sabado' || dia === 'domingo'
+}
+
+Ejercicio 10: Operando strings
+definí la función longitudNombreCompleto, que tome un nombre y un apellido, y retorne su longitud total, contando un espacio extra para separar a ambos:
+
+Resolución: function longitudNombreCompleto(nombre,apellido){
+  return longitud(nombre+apellido+1)
+}
+
+Ejercicio 11: ¡GRITAR!
+Definí la función gritar. Te dejamos para que uses la función convertirEnMayuscula
+
+Resolución: function gritar(string){
+  return convertirEnMayuscula('¡'+string+'!')
+}
+
+Ejercicio 12: ¿Y qué tal si...?
+definí la función maximo, que funcione como Math.max (¡no vale usarla!) y retorne el máximo entre dos números
+
+Resolución: function maximo(n1,n2){
+  if (n1 > n2) {
+     return n1;
+   } else {
+     return n2;
+   } 
+}
+
+Ejercicio 13: ¿De qué signo sos?
+Definí la función signo, que dado un número nos retorne:
+1 si el número es positivo
+0 si el número es cero
+-1 si el número es negativo
+
+Resolución: function signo(num){
+   if (num > 0) {
+    return 1;
+  }  else  if (num === 0) {
+    return 0;
+  } else {
+    return -1;
+  }
+}
+
+Ejercicio 14: El retorno del booleano
+Para Ema un número es de la suerte si:
+es positivo, y
+es menor a 100, y
+no es el 15.
+Definí la función esNumeroDeLaSuerte que dado un número diga si cumple la lógica anterior.
+
+Resolución: function esNumeroDeLaSuerte(num){
+  return num >0 && num < 100 && num !== 15
+}
+
+Ejercicio 15: Los premios
+Definí, y probá en la consola, la función medallaSegunPuesto
+
+ function medallaSegunPuesto(puesto){
+  if (puesto === 1) {
+    return 'oro';
+  }  else  if (puesto === 2) {
+    return 'plata';
+  } else  if (puesto === 3) {
+    return 'bronce';
+  } else {
+    return 'nada';
+  }
+}
+
+Ejercicio 16: Tipos de datos
+Probá en la consola las siguientes cosas:
+
+5 + 6 (ok, los números se pueden sumar)
+5 === 6 (ok, todas las cosas se pueden comparar)
+8 > 6 (ok, los números se pueden ordenar)
+!true (ok, los booleanos se pueden negar)
+false / true (no está bien, ¡los booleanos no se pueden dividir!)
+
+Ejercicio 17: Datos de todo tipo
+Antes de terminar un último desafío: ¿Cuál es el valor de las siguientes expresiones? ¡Marcá todas las correctas!
+
+4 + 4 vale 8
+"4" + "4" vale "44"
+"on" + "ce" vale "once"
+true && false vale false
+5 >= 6 vale false
+! true vale false
