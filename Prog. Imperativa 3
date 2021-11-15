@@ -1,0 +1,97 @@
+Ejercicio 1: ¿Y el tablero?
+Usando la consola, decí con tus propias palabras qué hace la función funcionMisteriosa, que recibe dos números enteros como argumentos.
+
+Resolución: multiplica la aparición de O's y W's según el numero indicado como argumento.
+
+Ejercicio 2: Impresión por pantalla
+Probá funcionEgocentrica en la consola.
+
+Resolución: funcionEgocentrica()
+
+Ejercicio 3: Martin Fierro
+definí la function versosMartinFierro que imprima por pantalla los primeros versos del Martín Fierro
+
+Resolución: function versosMartinFierro(){
+  imprimir("Aquí me pongo a cantar");
+  imprimir("Al compás de la vigüela;");
+  imprimir("Que el hombre que lo desvela");
+  imprimir("Una pena extraordinaria");
+  return 0;
+}
+
+Ejercicio 4: ¿Y los procedimientos?
+Envía esta nueva versión de versosMartinFierro
+
+Resolución: function versosMartinFierro() {
+    imprimir("Aquí me pongo a cantar");
+    imprimir("Al compás de la vigüela;");
+    imprimir("Que el hombre que lo desvela");
+    imprimir("Una pena extraordinaria");
+}
+
+Ejercicio 5: ¿Y el program?
+Copiá y enviá este programa
+
+Resolución: imprimir("Tirando dados");
+imprimir("La primera tirada dio " + tirarDado());
+imprimir("La segunda tirada dio " + tirarDado());
+imprimir("La tercera tirada dio " + tirarDado());
+
+Ejercicio 6: Coerciones
+definí una función elefantesEquilibristas, que tome un número de elefantes y devuelva una rima de una conocida canción:
+
+Resolución: function elefantesEquilibristas(num){
+  return num + " elefantes se balanceaban"
+}
+
+Ejercicio 7: El círculo de la vida
+Definí las funciones perimetroCirculo y areaCirculo que reciben el radio de un círculo y a partir del mismo nos retornan su perímetro y su área.
+
+Resolución: function perimetroCirculo(radioCirc){
+  return (3.14159265358979 * 2 ) * radioCirc
+}
+
+function areaCirculo(radioCirc){
+  return 3.14159265358979 * (radioCirc * radioCirc)
+}
+
+Ejercicio 8: PIenso que así es más fácil
+Cambiá los lugares donde aparece 3.14159265358979 por la variable pi en las funciones que tenemos definidas.
+
+Resolución: let pi = 3.14159265358979;
+
+function perimetroCirculo(radioCirc){
+  return (pi * 2 ) * radioCirc
+}
+
+function areaCirculo(radioCirc){
+  return pi * (radioCirc * radioCirc)
+}
+
+Ejercicio 9: Esto no tiene valor
+Probala en la consola y fijate qué sucede.
+
+Resolución: sumaSinSentido()
+
+Ejercicio 10: Variables globales
+definí una función ascensorSobrecargado, que toma una cantidad de personas y retorna si entre todas superan la carga máxima de 300 kg.
+
+Resolución: function ascensorSobrecargado(cantPersonas){
+  let cargaMaximaEnKilogramos = 300;
+  return (pesoPromedioPersonaEnKilogramos * cantPersonas) > cargaMaximaEnKilogramos; 
+}
+
+Ejercicio 11: La buena fortuna
+Definí el procedimiento aumentarFortuna que duplique el valor de la variable global pesosEnMiBilletera.
+
+Resolución: function aumentarFortuna(){
+  pesosEnMiBilletera = pesosEnMiBilletera * 2;
+} 
+
+Ejercicio 12: ¿Y esto cuánto vale?
+¿Qué retorna cuentaExtravagante?
+
+Resolución: 20
+
+
+
