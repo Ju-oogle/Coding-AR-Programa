@@ -1,0 +1,104 @@
+Ejercicio 1: ¡Que el último apague la luz!
+Definí el procedimiento usarCierre para que podamos abrir y cerrar el cierre de una mochila.
+
+Resolución: let mochilaAbierta = true;
+
+function usarCierre() {
+  mochilaAbierta = !mochilaAbierta;
+}
+
+Ejercicio 2: Negar no cuesta nada
+Definí esMayorDeEdad, que recibe una edad, y luego esMenorDeEdad a partir de ella.
+
+Resolución: function esMayorDeEdad(numero) {
+return (17<numero);
+}
+function esMenorDeEdad(numero) {
+return !esMayorDeEdad(numero);
+}
+
+Ejercicio 3: Los peripatéticos
+Definí una función esPeripatetico que tome la profesión de una persona, su nacionalidad y la cantidad de kilómetros que camina por día. Alguien es peripatético cuando es un filósofo griego y le gusta pasear (camina más de 2 kilómetros por día).
+
+Resolución: function esPeripatetico(profesion,nacionalidad,kms){
+return profesion === "filósofo" && nacionalidad === "griego" && kms > 2;
+}
+
+Ejercicio 4: La verdad detrás de la conjunción
+Probá en la consola la función consumePocaEnergia, que recibe una temperatura y una cantidad de lamparitas, y comprobá si se comporta como en la tabla
+
+Resolución: consumePocaEnergia(24, 5)
+ consumePocaEnergia(24, 0)
+ consumePocaEnergia(21, 7)
+ consumePocaEnergia(18, 1)
+
+Ejercicio 5: ¡Juguemos al T.E.G.!
+Probá en la consola las siguientes expresiones:
+
+Resolución: gano(true, 25)
+ gano(false, 30)
+ gano(false, 20)
+ gano(true, 31)
+
+¿Te animás a construir la tabla de verdad de la disyunción lógica?
+
+Resolución:
+A	  B   A || B
+V	  V 	  V
+V	  F 	  V
+F	  V	    V
+F	  F 	  F
+
+
+Ejercicio 6: Y ahora... ¿quién podrá ayudarnos?
+Definí las funciones esFinDeSemana y estaCerrado
+
+Resolución: function esFinDeSemana(dia){
+  return (dia === 'sabado' || dia === 'domingo');
+}
+
+function estaCerrado(esFeriado, dia, horario) {
+  return esFeriado || esFinDeSemana(dia) || !dentroDeHorarioBancario(horario);
+}
+
+Ejercicio 7: Claroscuro
+Definí la función tieneContraste. Para que la página tenga contraste tiene que tener el fondo claro y la letra no o bien tener la letra clara y el fondo no 
+
+Resolución: function tieneContraste(colorLetra, colorFondo){
+  return esTonoClaro(colorLetra) && !esTonoClaro(colorFondo)|| !esTonoClaro(colorLetra) && esTonoClaro(colorFondo);
+}
+
+Ejercicio 8: La verdad es que no hay una verdad
+Probá tu función tieneContraste con los siguientes valores y comprobá si se comporta como la tabla
+
+Resolución: tieneContraste("amarillo", "beige")
+ tieneContraste("azul", "violeta")
+ tieneContraste("blanco", "negro")
+ 
+ 
+Ejercicio 9: ¡Hola! Mi nombre es Xor
+definí la función genérica xor, que tome dos booleanos y retorne el valor de verdad correspondiente.
+
+Resolución: function xor(a,b){
+return a!==b;
+}
+
+
+Resolución: pagaConTarjeta(true, "crédito", 320)
+ pagaConTarjeta(false, "crédito", 80)
+ pagaConTarjeta(true, "débito", 215)
+ pagaConTarjeta(true, "débito", 32)
+ 
+Ejercicio 11: Un ejercicio sin precedentes
+Definí la función sePuedeConcentrar que recibe una bebida, su temperatura y un booleano que nos dice si Delfi está programando
+
+Resolución: function sePuedeConcentrar(bebida, temperatura, prog){
+return (bebida === "mate" && (temperatura===80)) && prog || (bebida === "té" && 95 <= (temperatura)) && prog;
+}
+
+Ejercicio 12: ¿Puedo subir?
+Definí la función de 3 parámetros puedeSubirse que recibe una altura de una persona en metros, si está acompañada y si tiene alguna afección cardíaca. 
+
+Resolución: function puedeSubirse(altura,acompanado,afeccion){
+return ((altura>=1.5)||(altura>=1.2 &&acompanado))&& !afeccion;
+}
