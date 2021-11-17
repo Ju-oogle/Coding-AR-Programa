@@ -1,0 +1,92 @@
+Ejercicio 1: Series favoritas
+Probá en la consola las siguientes consultas
+
+Resolución: seriesFavoritasDeAna
+seriesFavoritasDeHector
+["hola","mundo!"]
+["hola","hola"]
+
+Ejercicio 2: Y esto, es una lista
+Probá en la consola las siguientes consultas:
+
+Resolución: listasIguales(["hola", "mundo"], ["mundo", "hola"])
+listasIguales(["hola", "mundo"], ["hola", "mundo"])
+listasIguales(["hola", "mundo"], ["hola", "todo", "el", "mundo"])
+listasIguales(["hola"], ["hola", "mundo"])
+["hola", "mundo"] === ["mundo", "hola"]
+personas
+["mara", "julian"] === personas
+personas === personas
+
+Ejercicio 3: Juegos de azar
+Probá en la consola las siguientes consultas:
+
+Resolución: numerosDeLoteria
+salioCara
+[[1, 2, 3], [4, 5, 6]]
+
+Ejercicio 4: Listas vacías
+Probá escribir en la consola unaListaVacia
+
+Resolución: unaListaVacia
+
+Ejercicio 5: ¿Cuántos elementos tenés?
+Realizá las siguientes consultas en la consola:
+
+Resolución: longitud([])
+longitud(numerosDeLoteria)
+longitud([4, 3])
+
+Ejercicio 6: Agregando sabor
+inspeccioná en la consola qué elementos contiene pertenencias, agregale una "ballesta" y volvé a inspeccionar pertenencias.
+Además existe un procedimiento remover, que recibe la lista y un elemento por parámetro. Investigá en la consola qué hace. 
+
+Resolución: pertenencias
+agregar(pertenencias,"ballesta")
+remover('ballesta')
+
+Ejercicio 7: Trasladar
+Definí el procedimiento trasladar, que tome dos listas y un elemento de la primera. trasladar debe sacar el elemento de la primera lista y agregarlo en la segunda.
+
+Resolución: function trasladar(array1,array2, value){
+  agregar(array2, value);
+  remover(array1, value);
+}
+
+Ejercicio 8: ¿Y dónde está?
+Probá lo siguiente:
+
+Resolución: posicion(diasLaborales, "osvaldo")
+
+Ejercicio 9: Contiene
+Definí la función contiene que nos diga si una lista contiene un cierto elemento.
+
+Resolución: function contiene(lista, value){
+  return posicion(lista, value) !== -1;
+}
+
+Ejercicio 10: Enésimo elemento
+Probalo en la consola: ¿qué sucede si le pedís el elemento 0 a una lista vacía? ¿O si le pedís el elemento 48 a una lista de 2 elementos?
+
+Resolución: [][0]
+['La','Mamba'][48]
+
+Ejercicio 11: Más premios
+definí nuevamente la función medallaSegunPuesto, pero esta vez usando como máximo un único if.
+
+Resolución: let medalla = ["oro", "plata", "bronce"];
+function medallaSegunPuesto(puesto) {
+if (puesto<=3)
+return medalla[puesto-1]
+else
+return "nada";
+}
+
+Ejercicio 12: No te olvides de saludar
+Completá la función saludar que recibe una lista de personas e imprime un saludo con "hola" para cada una de ellas.
+
+Resolución: function saludar(personas) {
+  for(let persona of personas) {
+    imprimir('hola'+' '+persona)
+  }
+}
