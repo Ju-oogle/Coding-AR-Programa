@@ -1,0 +1,85 @@
+Ejercicio 1: Los primeros registros
+Probá en la consola escribiendo:
+
+Resolución: estatuaDeLaLibertad
+cristoRedentor
+torreEiffel
+tajMahal
+coliseo
+
+Ejercicio 2: Tu propio monumento
+Guardá en las variables torreAzadi y monumentoNacionalALaBandera
+
+Resolución: let torreAzadi = {nombre: "Torre Azadi", locacion: "Teherán, Irán", anioDeConstruccion: 1971 };
+let monumentoNacionalALaBandera = {nombre: "Monumento Nacional a la Bandera", locacion: "Rosario, Argentina", anioDeConstruccion: 1957 };
+
+Ejercicio 3: Accediendo al campo
+Declaramos los planetas mercurio, marte y saturno como registros con la siguiente información: nombre, temperaturaPromedio y si tieneAnillos.
+
+Resolución: mercurio.nombre
+marte.temperaturaPromedio
+saturno.tieneAnillos
+
+Ejercicio 4: Temperatura de planeta
+Definí una función temperaturaDePlaneta que reciba como argumento un registro de planeta y retorne un string que indique su nombre y su temperatura promedio.
+
+Resolución: function temperaturaDePlaneta(planeta) {
+return (planeta.nombre + " tiene una temperatura promedio de " + planeta.temperaturaPromedio +" grados")
+}
+
+Ejercicio 5: Moviendo archivos
+Definí el procedimiento moverArchivo, que recibe un registro y una nueva ruta y modifica el archivo con la nueva ruta.
+
+Resolución: function moverArchivo(registro, rutaNueva) {
+  let leeme=registro.ruta=rutaNueva
+  }
+  
+Ejercicio 6: Registros de dos milenios
+Definí la función esDelMilenioPasado, que recibe un archivo y retorna un booleano.
+
+function esDelMilenioPasado(archivo){
+let fecha = archivo.creacion
+if (anio(fecha)<2000){
+return true
+}
+}
+
+Ejercicio 7: Postres complejos
+Definí la función masDificilDeCocinar, que recibe dos registros de postres como argumentos y retorna el que tiene más ingredientes de los dos.
+
+Resolución: function masDificilDeCocinar (postre1, postre2){
+if (longitud(postre1.ingredientes) < longitud(postre2.ingredientes)){
+return postre2;
+}else {
+return postre1;
+}
+}
+
+Ejercicio 8: Listas de registros
+Probá en la consola las listas postresFavoritos y monumentosDeAmerica
+Definí la función masDificilDeCocinar, que recibe dos registros de postres como argumentos y retorna el que tiene más ingredientes de los dos.
+
+Resolución: postresFavoritos 
+monumentosDeAmerica
+
+Ejercicio 9: 60 dulces minutos
+Definí el procedimiento agregarAPostresRapidos, que toma una lista con postres rápidos y un postre por parámetro. Si el tiempo de cocción es de una hora o menos, se agrega el registro a la lista.
+
+Resolución: function agregarAPostresRapidos(lista,postre) {
+if (postre.tiempoDeCoccion <= 60) {
+agregar(lista, postre);
+}
+
+Ejercicio 10: Hay un registro en mi registro
+Averiguá qué devuelve el campo ingredientes del campo postre del registro menuInfantil
+
+Resolución: menuInfantil.postre.ingredientes
+
+Ejercicio 11: ¡Azúcar!
+Definí un procedimiento endulzarMenu, que recibe un registro menú y le agrega azúcar a los ingredientes de su postre. 
+
+Resolución: function endulzarMenu(menu){
+  agregar(menu.postre.ingredientes, 'azúcar')
+}
+
+}
