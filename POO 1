@@ -1,0 +1,131 @@
+Ejercicio 1: Fijando nuestro objetivo
+ver video
+
+Ejercicio 2: ¡Hola Pepita!
+Resolución: Pepita
+
+Ejercicio 3: Un mundo de objetos
+Hacé las siguientes consultas en la consola:
+
+Resolución: Pepita
+ Norita
+ 87
+ 'hola mundo'
+ true
+ 
+Ejercicio 4: El derecho a la Identidad
+Ejecutá las siguientes pruebas en la consola:
+
+Resolución: 
+ Pepita == Norita
+ Norita == Pepita
+ Norita == Norita
+ "hola" == "chau"
+ 
+Ejercicio 5: Mensajes, primera parte
+enviale un mensaje cantar!
+
+Resolución: Pepita.cantar!
+
+Ejercicio 6: Mensajes, segunda parte
+Enviale el mensaje bailar!
+
+Resolución: Pepita.bailar!
+
+Ejercicio 7: No entendí...
+Descubramos qué otras cosas sabe hacer Pepita
+
+Resolución: Pepita.pasear!
+ Pepita.energia
+ Pepita.comer_lombriz!
+ Pepita.volar_en_circulos!
+ Pepita.se_la_banca?
+ 
+Ejercicio 8: Un poco de sintaxis
+Proba con los siguientes mensajes
+ 
+Resolución: energia
+ Pepita energia
+ Pepita..energia
+ 
+Ejercicio 9: Interfaz
+Fijate qué devuelve cada mensaje (diferencia aquellos comunes de los que tienen !)
+
+Resolución: energia
+cantar!
+comer_lombriz!
+volar_en_circulos!
+
+Ejercicio 10: Hacer versus Devolver
+Enviale a Pepita esos tres mensajes varias veces en distinto orden y fijate si cambia algo.
+
+Resolución: energia
+comer_lombriz!
+volar_en_circulos!
+volar_en_circulos!
+energia
+comer_lombriz!
+energia
+
+Ejercicio 11: Tu primer programa con objetos
+escribí un primer programa que consista en hacer que Pepita coma y vuele hasta quedarse con 150 unidades de energía. Acordate que Pepita arranca con la energía en 100.
+
+Resolución:
+Pepita.comer_lombriz!
+Pepita.comer_lombriz!
+Pepita.comer_lombriz!
+Pepita.volar_en_circulos!
+
+
+Ejercicio 12: ¿Quién te entiende?
+Usando la consola, averiguá cuál es la interfaz de Pepita, Norita y Mercedes
+
+Resolución: interfaz_pepita = %w(
+  energia
+  cantar!
+  comer_lombriz!
+  volar_en_circulos!
+)
+  
+interfaz_norita = %w(
+  cantar!
+  comer_lombriz!
+  volar_en_circulos!
+)
+  
+interfaz_mercedes = %w(
+  cantar!
+)
+
+Ejercicio 14: Argumentos
+Probá enviar los siguientes mensajes:
+
+Resolución: Pepita.volar_hacia! Iruya
+ Pepita.comer_alpiste! 39
+ Pepita.comer_alpiste! 6, Norita
+
+Ejercicio 15: Más argumentos
+escribí un programa que haga que Pepita coma 500 gramos de alpiste, vuele a Iruya, y finalmente vuelva a Obera.
+
+Resolución: Pepita.comer_alpiste! 500
+Pepita.volar_hacia! Iruya
+Pepita.volar_hacia! Obera
+
+Ejercicio 16: Mensajes por todas partes
+Probá en la consola los siguientes envíos de mensajes
+
+Resolución: 5.+ 6
+ 3.< 27
+ Pepita.== Norita
+
+Ejercicio 17: Recapitulando
+Escribir un programa que haga que Pepita:
+Coma 90 gramos de alpiste. 
+Vuele a Iruya. 
+Finalmente, coma tanto alpiste como el 10% de la energía que le haya quedado. 
+
+Resolución: Pepita.comer_alpiste! 90
+Pepita.volar_hacia! Iruya
+Pepita.comer_alpiste!(Pepita.energia * 0.1)
+
+ 
