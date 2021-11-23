@@ -1,0 +1,154 @@
+Ejercicio 1: Variables
+Veamos si queda claro: agregá al programa anterior una variable saludo_formal, inicializada con "buen día"
+
+Resolución: saludo = "hola"
+saludo_formal = 'buen día'
+saludo_formal.upcase
+
+Ejercicio 2: Las variables son referencias
+Veamos si se entiende hasta acá: creá una variable llamada despedida que apunte al objeto "adiós", y luego enviale el mensaje size().
+
+Resolución: despedida = 'adiós'
+despedida.size()
+
+Ejercicio 3: Referencias implícitas
+Probá las siguientes consultas en la consola y pensá en dónde hay referencias implícitas:
+
+Resolución:  "ni hao".upcase
+ 4.abs.even?
+ (4 + 8).abs
+ 
+Ejercicio 4: Múltiples referencias
+Declará las variables otro_saludo y despedida como en el ejemplo de más arriba, y realizá las siguientes consultas utilizando equal?:
+
+Resolución: "buen día".equal? "buen día"
+ despedida.equal? "buen día"
+ otro_saludo.equal? otro_saludo
+ despedida.equal? otro_saludo
+ 
+Ejercicio 5: Identidad, revisada
+Dadas las siguientes asignaciones, elegí cuáles de estas opciones referencian al mismo objeto que persona.
+
+Resolución: hermana_de_tito
+hermana_de_ana
+
+Ejercicio 6: Equivalencia
+Elegí cuál de las siguientes opciones contiene 3 referencias distintas que apunten a objetos equivalentes entre sí, pero no idénticos.
+
+Resolución: procer = 'San Martín'
+avenida = 'San Martín'
+ciudad = 'San Martín'
+
+Ejercicio 7: Objetos bien conocidos
+Definí un objeto AbuelaClotilde que entienda un mensaje alimentar_nieto!, que haga comer! 2 veces a Fito: primero con 2000 calorias, y luego con 1000 calorías; ¡el postre no podía faltar!
+
+Resolución: module AbuelaClotilde
+  
+  def self.alimentar_nieto!
+    Fito.comer!(2000)
+    Fito.comer!(1000)
+  end
+end
+
+Ejercicio 8: Atributos y parámetros
+Escribí un programa que defina la ciudad de Pepita de forma que apunte a Iruya. Y pensá: ¿cuántas referencias a Iruya hay en este programa? 
+
+Resolución: Pepita.ciudad = Iruya
+
+Ejercicio 9: Lo 100to
+Dada las siguientes definiciones:
+
+module Pepita
+  @energia = 100
+
+  def self.volar_en_circulos!
+    @energia -= 10
+  end
+
+  def self.ciudad=(una_ciudad)
+    @ciudad = una_ciudad
+  end
+end
+
+module Iruya
+end
+¿Cuáles de las siguientes opciones son referencias?
+
+Resolución: Pepita
+@energia
+una_ciudad
+@ciudad
+Iruya
+
+Ejercicio 10: Objetos compartidos
+Creá un programa que inicialice al amigo de Fito y al nieto de AbueloGervasio de forma que ambos conozcan al mismo objeto (Juli).
+
+Luego, hacé que el abuelo alimente a su nieto 3 veces. ¿Qué pasará con Fito? ¿Se pondrá feliz?
+Resolución: Fito.amigo = Juli
+AbueloGervasio.nieto = Juli
+nieto = Juli
+
+3.times{AbueloGervasio.alimentar_nieto!}
+
+def self.es_feliz_como_su_amigo?
+@felicidad=true
+end
+
+Ejercicio 11: Para cerrar
+Definí los objetos necesarios para que podamos hacer lo siguiente:
+
+#Configurar el plato del día de Jor
+Jor.plato_del_dia = Fideos
+#Que Jor le agregue picante
+Jor.picantear!
+#Preguntar si está picante
+Fideos.picantes?
+#Que Luchi suavice el plato que reciba como argumento
+Luchi.suavizar! Fideos, 3
+#Descartar la salsa
+Fideos.descartar_la_salsa!
+
+Resolución: module Fideos
+@ajies=0  
+
+def self.ajies
+    @ajies
+end
+  
+def self.picantes?
+    @ajies > 2
+end
+
+def self.descartar_la_salsa!
+  @ajies = 0
+end
+
+def self.agregar_picante!
+  @ajies = @ajies +1
+end
+
+def self.quitar_picante!
+  @ajies = @ajies -1
+end
+end
+
+module Jor
+def self.plato_del_dia=(plato)
+@plato_del_dia=plato
+end
+ 
+def self.picantear!
+5.times {@plato_del_dia.agregar_picante!} 
+end
+end  
+  
+module Luchi
+def self.suavizar!(plato, cant)
+if (plato.ajies>10) 
+plato.descartar_la_salsa!
+elsif (plato.ajies>2)
+cant.times {plato.quitar_picante!} 
+end
+end
+end
+ 
