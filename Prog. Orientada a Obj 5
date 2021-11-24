@@ -1,0 +1,231 @@
+Ejercicio 1: Entrando en Calor
+Definí estos tres objetos de forma que entiendan los mensajes dificultad, violento? y jugar!(un_tiempo).
+
+Resolución: module CarlosDuty
+  @cantidad_logros=0
+  def self.jugar!(un_tiempo)
+    if un_tiempo>2
+      @cantidad_logros+=1
+    else
+      false
+    end
+  end
+
+  def self.violento?
+    true
+  end
+
+  def self.dificultad
+    30 - (@cantidad_logros * 0.5)
+  end
+end
+
+module TimbaElLeon
+  @dificultad =25
+
+  def self.violento?
+    false
+  end
+
+  def self.jugar!(un_tiempo)
+    @dificultad =25+un_tiempo
+  end
+
+  def self.dificultad
+    @dificultad
+  end
+end
+
+module Metroide
+  @nivel_espacial = 3
+
+  def self.dificultad
+    100
+  end
+
+  def self.jugar!(un_tiempo)
+    @nivel_espacial = @nivel_espacial +1
+  end
+
+  def self.violento?
+    @nivel_espacial > 5
+  end
+end
+
+Ejercicio 2: Creando una lista
+Definí un objeto Juegoteca que tenga un atributo juegos con su correspondiente getter. La Juegoteca tiene que tener en primer lugar el juego CarlosDuty, luego TimbaElLeon y por último Metroide.
+
+Resolución: module Juegoteca
+  @juegos = [CarlosDuty, TimbaElLeon, Metroide]
+  def self.juegos
+    @juegos
+  end
+end
+
+Ejercicio 3: Algunos mensajes básicos
+¡Probá enviarle los mensajes push, delete, include? y size a la colección numeros_de_la_suerte!
+
+Resolución: numeros_de_la_suerte.size
+numeros_de_la_suerte.push 23
+numeros_de_la_suerte.delete 9
+numeros_de_la_suerte.push 13
+numeros_de_la_suerte.push 27
+numeros_de_la_suerte.includes? 13
+
+Ejercicio 4: Set o no set
+¿Cuáles de los siguientes mensajes creés que podremos enviarle a un set? 
+
+Resolución: push
+delete
+include?
+size
+
+Ejercicio 5: Mejorando la Juegoteca
+Agregá el código necesario para que entienda los siguientes mensajes:
+
+puntos: nos dice cuantos puntos tiene la Juegoteca. Inicialmente son 0.
+adquirir_juego!(un_juego): agrega el juego a la Juegoteca, y le suma 150 puntos.
+borrar_juego!(un_juego): quita un juego de la Juegoteca, pero no resta puntos.
+completa?: se cumple si la Juegoteca tiene más de 1000 puntos y más de 5 juegos.
+juego_recomendable?(un_juego): es verdadero para un_juego si no está en la Juegoteca y es violento?.
+
+Resolución: module Juegoteca
+  @juegos = [CarlosDuty, TimbaElLeon, Metroide]
+  @puntos = 0
+ 
+  def self.juegos
+    @juegos
+  end
+  
+  def self.puntos
+    @puntos
+  end
+  
+  def self.adquirir_juego!(un_juego)
+    @juegos.push un_juego
+    @puntos += 150
+  end
+  
+  def self.borrar_juego!(un_juego)
+    @juegos.delete un_juego
+  end
+  
+  def self.completa?
+    @puntos > 1000 && @juegos.size > 5
+   end
+    
+  def self.juego_recomendable?(un_juego)
+!(@juegos.include?(un_juego)) && un_juego.violento?
+end
+end
+
+Ejercicio 6: ¿Bloques? ¿Eso se come?
+Marcá las respuestas correctas:
+
+Resolución: un_numero vale 7
+otro_numero vale 5
+
+Ejercicio 7: Bloques con parámetros
+Asignale a la variable jugar_a_timba un bloque que reciba un único parámetro. El bloque recibe una cantidad de minutos y debe hacer que se juegue a TimbaElLeon durante ese tiempo, pero recordá que jugar! espera una cantidad de horas.
+
+Resolución: jugar_a_timba = proc { |un_tiempo| un_tiempo = TimbaElLeon.jugar! un_tiempo/60 }
+
+Ejercicio 8: Filtrando quienes cumplen
+Definí el método juegos_violentos que retorna los juegos de la Juegoteca que cumplan violento?.
+
+Resolución: module Juegoteca
+  @juegos = [CarlosDuty, TimbaElLeon, Metroide]
+  def self.juegos
+    @juegos
+  end
+  
+  def self.juegos_violentos
+    juegos.select{|juegos| juegos.violento?}
+  end
+end
+
+Ejercicio 9: El que busca encuentra
+Hacé que la Juegoteca entienda juego_mas_dificil_que(una_dificultad), que retorna algún juego en la Juegoteca con más dificultad que la que se pasa como argumento.
+Un dato curioso para tener en cuenta: ¡los mensajes find y detect hacen exactamente lo mismo! 
+
+Resolución: module Juegoteca
+  @juegos = [CarlosDuty, TimbaElLeon, Metroide]
+  def self.juegos
+    @juegos
+  end
+  
+  def self.juego_mas_dificil_que(una_dificultad)
+    juego_mas_dificil_que = @juegos.find { |juegos| juegos.dificultad > una_dificultad }
+  end
+end
+
+Ejercicio 10: ¿Alguno cumple? ¿Todos cumplen?
+Definí los siguientes métodos en nuestra Juegoteca:
+
+mucha_violencia?: se cumple si todos los juegos que posee son violentos.
+muy_dificil?: nos dice si alguno de los juegos tiene más de 25 puntos de dificultad.
+
+Resolución: module Juegoteca
+  @juegos = [CarlosDuty, TimbaElLeon, Metroide]
+  def self.juegos
+    @juegos
+  end
+  
+  def self.mucha_violencia?
+    juegos.all? { |un_juego| un_juego.violento? } 
+  end
+  
+  def self.muy_dificil?
+    juegos.any? { |un_juego| un_juego.dificultad >25}
+  end
+end
+
+Ejercicio 11: El viejo y querido map
+Agregá a la Juegoteca un método llamado dificultad_violenta que retorne una colección con la dificultad de sus juegos_violentos.
+
+Resolución: module Juegoteca
+  @juegos = [CarlosDuty, TimbaElLeon, Metroide]
+  def self.juegos
+    @juegos
+  end
+  
+  def self.juegos_violentos
+    @juegos_violentos = @juegos.select { |un_juego| un_juego.violento?}
+  end
+  
+  def self.dificultad_violenta
+    juegos_violentos.map { |un_juego| un_juego.dificultad}
+  end  
+end
+
+Ejercicio 12: ¿Cuántos cumplen? ¿Cuánto suman?
+agregá a la Juegoteca el método promedio_de_violencia, cuyo valor sea la sumatoria de dificultad de los juegos violentos dividida por la cantidad de juegos violentos de la Juegoteca.
+
+Resolución: module Juegoteca
+  @juegos = [CarlosDuty, TimbaElLeon, Metroide]
+  def self.juegos
+    @juegos
+  end
+  
+    def self.juegos_violentos
+    @juegos_violentos = @juegos.select { |un_juego| un_juego.violento?}
+  end
+  
+  def self.promedio_de_violencia
+    self.juegos_violentos.sum {|un_juego| un_juego.dificultad} / self.juegos_violentos.count {|un_juego| un_juego.violento?}
+  end
+end
+
+Ejercicio 13: Jugando a todo
+Definí el método jugar_a_todo! en la Juegoteca, que haga jugar a cada uno de los juegos durante 5 horas. Recordá que los juegos entienden jugar!(un_tiempo).
+
+Resolución: module Juegoteca
+  @juegos = [CarlosDuty, TimbaElLeon, Metroide]
+  def self.juegos
+    @juegos
+  end
+
+  def self.jugar_a_todo!
+    juegos.each { |un_juego| un_juego.jugar!(5)}
+  end
+end
