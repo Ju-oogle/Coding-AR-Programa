@@ -1,0 +1,134 @@
+Ejercicio 1: Aflojá con el aparatito
+Definí la clase Celular y también los métodos initialize, utilizar! y cargar_a_tope!.
+ 
+Resolución: class Celular
+  def initialize
+    @bateria = 100
+  end
+
+  def bateria
+    @bateria
+  end
+
+  def utilizar!(minutos)
+    @bateria -= minutos * 0.5
+  end
+
+  def cargar_a_tope!
+     @bateria = 100
+  end
+  
+ 
+Ejercicio 2: Notebook
+Definí la clase Notebook, que sepa entender los mensajes initialize, utilizar! y cargar_a_tope!.
+ 
+Resolución: class Notebook
+  def initialize
+    @bateria = 100
+  end
+
+  def bateria
+    @bateria
+  end
+
+  def utilizar!(minutos)
+    @bateria -= minutos
+  end
+
+  def cargar_a_tope!
+     @bateria = 100
+  end
+end
+
+Ejercicio 3: No repitan conmigo
+¿Qué métodos son iguales en ambas clases?
+ 
+Resolución: initialize
+cargar_a_tope!
+
+Ejercicio 4: Su superclase
+Definí la clase Dispositivo y modificá las clases que definiste anteriormente para evitar que haya métodos repetidos entre Celular y Notebook. Es importante que en el editor definas arriba la superclase y abajo sus subclases.
+
+Resolución: class Dispositivo
+  def initialize
+    @bateria = 100
+  end
+
+  def bateria
+    @bateria
+  end
+  
+  def cargar_a_tope!
+     @bateria = 100
+  end
+end
+
+ class Celular <  Dispositivo
+  def utilizar!(minutos)
+    @bateria -= minutos * 0.5
+  end
+end
+
+class Notebook < Dispositivo
+
+  def utilizar!(minutos)
+    @bateria -= minutos
+  end
+end
+
+Ejercicio 5: Arte abstracto
+Sabiendo esto, marcá las opciones correctas.
+
+Resolución: 
+Dispositivo es una clase abstracta.
+Celular es una clase concreta.
+Notebook es una clase concreta.
+Celular hereda de Dispositivo.
+Notebook hereda de Dispositivo.
+Las clases abstractas proveen comportamiento a sus subclases.
+Las clases concretas se utilizan para crear instancias.
+
+Ejercicio 6: ¿Me estás cargando?
+
+Resolución: 
+Definí el método descargado? en donde corresponda.
+
+Resolución: 
+
+
+
+Resolución: 
+
+
+Resolución: 
+
+
+Resolución: 
+
+
+Resolución: 
+
+
+Resolución: 
+
+
+Resolución: 
+
+
+Resolución: 
+
+
+Resolución: 
+
+
+Resolución: 
+
+
+Resolución: 
+
+
+Resolución: 
+
+
+Resolución: 
+
