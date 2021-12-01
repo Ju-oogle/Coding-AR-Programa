@@ -1,0 +1,144 @@
+Ejercicio 1: ¡Sin energía!
+En la consola probá lo siguiente:
+
+Qué pasa con su energía a medida que la hacemos volar en circulos. ¿Hasta qué punto disminuye?
+¿Puede seguir volando cuando ya no tenga energía?
+
+Resolución:
+pepita.energia
+pepita.volar_en_circulos!
+pepita.volar_en_circulos!
+pepita.energia
+pepita.volar_en_circulos!
+
+Ejercicio 2: Sólo Volar Si...
+Modificá el método volar_en_circulos! para que sólo vuele (pierda energía) si puede.
+
+Resolución:class Golondrina
+  def initialize
+    @energia = 50
+  end
+  
+  def energia
+    @energia
+  end
+  
+  def volar_en_circulos!
+    if @energia >=20 
+      @energia -= 20
+    end
+  end
+end
+
+Ejercicio 3: Una falla silenciosa
+Haciendo consultas en la consola, averiguá con cuánto dinero comienzan y terminan la cuenta_origen y la cuenta_destino.
+Asumí que ambas cuentas entienden el mensaje saldo.
+
+Resolución: cuenta_origen.saldo
+ cuenta_destino.saldo
+ transferencia.realizar! cuenta_origen, cuenta_destino
+ cuenta_origen.saldo
+ cuenta_destino.saldo
+
+Ejercicio 4: ¡Fallar!
+Probá nuevamente las consultas anteriores, pero con una nueva versión del código que no falla silenciosamente:
+
+Resolución: cuenta_origen.saldo
+ cuenta_destino.saldo
+ transferencia.realizar!(cuenta_origen, cuenta_destino)
+ 
+Resolución: cuenta_origen.saldo
+ cuenta_destino.saldo
+ transferencia.realizar!(cuenta_origen, cuenta_destino)
+
+Ejercicio 5: Lanzando excepciones
+Probá enviar mensaje_raro a ObjetoRaro (que ya cargamos por vos) en la consola.
+
+Resolución: ObjetoRaro.mensaje_raro
+
+Ejercicio 6: Abortando la evaluación
+Modifiquemos a Golondrina para que, en caso de no poder volar, no falle silenciosamente sino que lance una excepción. El mensaje debe ser "No tengo suficiente energía".
+
+Resolución: class Golondrina
+  def initialize
+    @energia = 50
+  end
+  
+  def energia
+    @energia
+  end
+  
+  def volar_en_circulos!
+    if @energia < 20  
+      raise "No tengo suficiente energía"
+    end
+    @energia -= 20
+  end
+end
+
+Ejercicio 7: Paren todo
+Agregá a la clase Transferencia un método deshacer! que sea exactamente al revés del realizar!: debe revertir la transferencia, moviendo el monto de la cuenta destino a la de origen.
+Como ahora tanto la cuenta origen como la cuenta destino pueden debitar y depositar, unificamos su comportamiento en una clase Cuenta. La podés ver en la solapa Biblioteca.
+
+Resolución: class Transferencia
+  def initialize(monto_a_transferir)
+    @monto = monto_a_transferir
+  end
+  
+  def realizar!(origen, destino)
+    origen.debitar! @monto
+    destino.depositar! @monto
+  end
+  
+  def deshacer!(origen, destino)
+    origen.depositar! @monto
+    destino.debitar! @monto
+  end
+end
+
+Ejercicio 8: El orden importa
+Este código tienen un problema relativo al manejo de excepciones. ¡Corregilo!
+
+Resolución: class Saqueo
+  def initialize(barco_saqueador)
+    @barco = barco_saqueador
+  end
+  
+  def realizar_contra!(ciudad)
+    if (ciudad.puede_hacerle_frente_a?(@barco))
+      raise "No se puede invadir la ciudad"
+    end
+    @barco.preparar_tripulacion!
+    @barco.desembarcar!(ciudad)
+  end
+end
+
+Ejercicio 9: Estudiando a las golondrinas
+Escribí el código necesario y pensá si es necesario hacer algo especial para que la excepción que lanza la golondrina recibida se lance también en estudiar_golondrina!.
+Veamos si queda claro: este código tiene un problema relativo al manejo de excepciones. ¡Corregilo!
+
+Resolución: class Ornitologo < Golondrina
+  def estudiar_golondrina!(golondrina)
+    golondrina.volar_en_circulos!
+  end
+end
+
+Ejercicio 10: Un buen mensaje
+Veamos si queda claro: este código tiene un problema relativo al manejo de excepciones. ¡Corregilo!
+
+Resolución: class Golondrina
+  def initialize
+    @energia = 50
+  end
+  
+  def energia
+    @energia
+  end
+  
+  def comer_alpiste!(cantidad)
+    @energia += cantidad * 2
+    if cantidad <= 0
+      raise "error! la cantidad ingresada fue $#{cantidad}"
+    end
+  end
+end
